@@ -36,7 +36,7 @@ namespace HangNail
             Console.WriteLine("Ladies and Gentlmen, step right up and play the game thats sweeping the nation.  Why hello kindly villager, what be your name? ");
             username = Console.ReadLine();
 
-            Console.WriteLine("Welcome " + username + ". We are going to be play ye' olde game of hangman, but with a slight twist.\n This is called hangnail. With every letter guessed incorrectly,\n the skin of the cuticle is ripped further down.\n This is a game that will take skill and cunning to make it through unscathed.\nYou will have to guess the word, but be careful, you only have a 8 lives.\n Guess too many wrong answers and you'll lose your LIFE! Can you guess the word?\n  ");
+            Console.WriteLine("Welcome " + username + ". We are going to be play ye' olde game of hangman,\n but with a slight twist.\n This is called hangnail. With every letter guessed incorrectly,\n the skin of the cuticle is ripped further down.\n This is a game that will take skill and cunning to make it through unscathed.\nYou will have to guess the word, but be careful, you only have a 8 lives.\n Guess too many wrong answers and you'll lose your LIFE! Can you guess the word?\n  ");
             Console.ReadLine();
 
             Console.Clear();
@@ -87,6 +87,7 @@ namespace HangNail
 
             int randomNumber = rng.Next(0, wordStorage.Count());
             //choose a random word from the word bank or invisibility 
+
             // force it to be UPPERCASE
             string wordToGuess = wordStorage[randomNumber].ToUpper();
 
@@ -116,11 +117,32 @@ namespace HangNail
                     {
                         //if they correctly guess the word
                         Console.WriteLine("Good Guess, Not too shabby!");
-
+                        Console.Clear();
                         //has the user guessed all the letters in the word?
                         if (AllLettersGuessed(Invisibility(wordToGuess, lettersGuessed)))
                         {
                             playing = false;
+                            Console.WriteLine(@"
+            (/)
+            (/)
+             (/)
+            (/)
+             (/)
+            (/)
+            (/))
+           (/)(/)
+          (/)'`(/)
+         (/)    (/)
+         (/)    (/)
+         (/)    (/)
+         (/)    (/)
+          (/)  (/)
+           (/)(/)
+            `""`");
+                            Console.WriteLine(@"/\  /\ __ _  _ __    __ _   /\/\    __ _  _ __
+ / /_/ // _` || '_ \  / _` | /    \  / _` || '_ \
+/ __  /| (_| || | | || (_| |/ /\/\ \| (_| || | | |
+\/ /_/  \__,_||_| |_| \__, |\/    \/ \__,_||_| |_|");
                             Console.WriteLine("Winner, Winner, Chicken Dinner!");
                         }
                     }
